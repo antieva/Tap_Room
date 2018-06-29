@@ -1,11 +1,12 @@
 import React from 'react';
+import Header from "./Header";
 import BeerList from './BeerList';
 import { Switch, Route } from 'react-router-dom';
 
 function App(){
   return (
     <div>
-      <h1>Tap Room</h1>
+      <Header/>
       <h3>Current beer:</h3>
       <hr/>
         <Switch>
