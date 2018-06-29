@@ -8,8 +8,15 @@ import Error404 from './Error404';
 function App(){
   return (
     <div>
+      <style jsx global>{`
+          div {
+            margin: 0 30px 30px;
+          }
+          body {
+          font-family: Helvetica;
+        }
+        `}</style>
       <Header/>
-      <hr/>
         <Switch>
           <Route exact path='/' component={BeerList} />
           <Route path='/newbeer' component={NewBeerForm} />
