@@ -6,6 +6,7 @@
 
 ## Description
 A small React app for a bar to track their kegs.
+There is React app's component structure in the project file TapRoomComponentStructure.jpg (./src/assets/images/TapRoomComponentStructure.jpg).
 
 ## User story:
 
