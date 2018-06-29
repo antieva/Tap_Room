@@ -1,4 +1,5 @@
-import React from "react";
+import React from 'react';
+import PropTypes from "prop-types";
 
 function Beer(props){
   return (
@@ -18,11 +19,11 @@ function Beer(props){
 }
 
 Beer.propTypes = {
-  name: propTypes.string,
-  description: propTypes.string,
-  abv: propTypes.string.isRequired,
-  price: propTypes.string.isRequired,
-  remaining: propTypes.string,
+  name: PropTypes.string,
+  description: PropTypes.string,
+  abv: PropTypes.string.isRequired,
+  price: PropTypes.string.isRequired,
+  remaining: PropTypes.string,
 };
 
 export default Beer;
