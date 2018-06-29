@@ -6,24 +6,23 @@ function NewBeerForm() {
     width: '830px',
   }
   var inputStyle =  {
-  transition: 'width .35s linear',
   outline: 'none',
   border: 'none',
   borderRadius: '4px',
   padding: '10px',
   fontSize: '20px',
-  width: '200px',
+  width: '300px',
   backgroundColor: '#dddddd',
   margin: '10px 60% 10px 20px',
+  textAlign: 'center'
   }
   var button = {
-    transition: 'width .35s linear',
     outline: 'none',
     border: 'none',
     borderRadius: '4px',
     padding: '10px',
     fontSize: '20px',
-    width: '220px',
+    width: '320px',
     backgroundColor: '#dddddd',
     height: '45px',
     margin: '30px 60% 0 20px'
