@@ -13,8 +13,8 @@ function NewBeerForm() {
   fontSize: '20px',
   width: '300px',
   backgroundColor: '#dddddd',
-  margin: '10px 60% 10px 20px',
-  textAlign: 'center'
+  margin: '10px 30% 10px 37%',
+  textAlign: 'center',
   }
   var button = {
     outline: 'none',
@@ -25,7 +25,7 @@ function NewBeerForm() {
     width: '320px',
     backgroundColor: '#dddddd',
     height: '45px',
-    margin: '30px 60% 0 20px'
+    margin: '30px 30% 0 37%'
   }
 
   return (

@@ -12,11 +12,13 @@ There is React app's component structure in the project file TapRoomComponentStr
 
 * As a patron, I want to see a list/menu of all available kegs. For each keg, I need to see its name, brand, price and alcoholContent.
 
+* As a patron and/or employee, I want to see how many pints are left in a keg. (A full keg has roughly 124 pints).
+
 * As an employee, I want to fill out a form when I tap a new keg to add it to the list.
 
-* As an employee, I want the option to edit a keg's properties after entering them just in case I make a mistake.
+## Future user story:
 
-* As a patron and/or employee, I want to see how many pints are left in a keg. (A full keg has roughly 124 pints).
+* As an employee, I want the option to edit a keg's properties after entering them just in case I make a mistake.
 
 * As an employee, I want to be able to click a button next to a keg whenever I sell a pint of it. This should decrease the number of pints left by 1.
 
