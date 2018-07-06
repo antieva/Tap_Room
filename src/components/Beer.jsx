@@ -30,10 +30,11 @@ function Beer(props){
 
 Beer.propTypes = {
   name: PropTypes.string,
+  brewer: PropTypes.string,
   description: PropTypes.string,
   abv: PropTypes.string.isRequired,
   price: PropTypes.string.isRequired,
-  remaining: PropTypes.string,
+  remaining: PropTypes.string
 };
 
 export default Beer;
