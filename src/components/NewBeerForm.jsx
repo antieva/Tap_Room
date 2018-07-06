@@ -1,7 +1,7 @@
 import React from 'react';
-// import reallyAdorablePuppy from '../assets/images/puppy.jpeg';
+import { v4 } from 'uuid';
 
-function NewBeerForm() {
+function NewBeerForm(props) {
   var imgStyle = {
     width: '830px',
   }
@@ -28,39 +28,63 @@ function NewBeerForm() {
     margin: '30px 30% 0 37%'
   }
 
+  let _name = null;
+  let _brewer = null;
+  let _description = null;
+  let _abv = null;
+  let _price = null;
+  let remaining = null;
+
+  function handleNewBeerFormSubmission(event) {
+    event.preventDefault();
+    props.onNewBeerCreation({name: _name.value, brewer: _brewer.value, description: _description.value, abv: _abv.value, price: _price.value, remaining: _remaining.value, id: v4()});
+    _name.value = ' ';
+    _brewer.value = ' ';
+    _description.value = ' ';
+    _abv.value = ' ';
+    _price.value = ' ';
+    _remaining.value = ' ';
+  }
+
   return (
     <div>
-      <form>
+      <form onSubmit={handleNewBeerFormSubmission}>
         <input
           style={inputStyle}
           type='text'
           id='name'
-          placeholder='Beer name' />
+          placeholder='Beer name'
+          ref={(input) => {_name = input;}} />
         <input
           style={inputStyle}
           type='text'
           id='brewer'
-          placeholder='Brewer' />
+          placeholder='Brewer'
+          ref={(input) => {_brewer = input;}}  />
         <input
           style={inputStyle}
           type='text'
           id='description'
-          placeholder='Description' />
+          placeholder='Description'
+          ref={(input) => {_description = input;}}  />
         <input
           style={inputStyle}
           type='text'
           id='abv'
-          placeholder='Abv' />
+          placeholder='Abv'
+          ref={(input) => {_abv = input;}}  />
         <input
           style={inputStyle}
           type='text'
           id='price'
-          placeholder='Price' />
+          placeholder='Price'
+          ref={(input) => {_price = input;}}  />
         <input
           style={inputStyle}
           type='text'
           id='remaining'
-          placeholder='Remaing' />
+          placeholder='Remaing'
+          ref={(input) => {_remaining = input;}}  />
         <button
           style={button}
           type='submit'>Add</button>
@@ -68,5 +92,9 @@ function NewBeerForm() {
     </div>
   );
 }
+
+NewBeerForm.propTypes = {
+  onNewBeerCreation: PropTypes.func
+};
 
 export default NewBeerForm;
