@@ -23,6 +23,7 @@ function BeerList(props) {
 
 BeerList.propTypes = {
   beerList: PropTypes.array
+  onBeerSelection: PropTypes.func.isRequired
 };
 
 export default BeerList;
