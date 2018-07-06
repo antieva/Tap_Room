@@ -21,7 +21,7 @@ function Beer(props){
         <p>Description: {props.description}</p>
         <p>Abv: {props.abv}</p>
         <p>Price: ${props.price}</p>
-        <p>Remainig: {props.remaining} <button type='button' onClick={() => {alert('hey, you just sold 1 pint of ' + props.name);}}</p>
+        <p>Remainig: {props.remaining} <button type='button' onClick={props.onSellingPint}></button></p>
       </div>
       <hr/>
     </div>

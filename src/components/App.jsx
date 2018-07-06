@@ -10,10 +10,12 @@ class App extends React.Component {
     super(props);
     this.state = {
       masterBeerList: [],
+      beerRemainig: '',
       selectedBeer: null
     };
     this.handleAddingNewBeerToList = this.handleAddingNewBeerToList.bind(this);
     this.handleChangeSelectedBeer = this.handleChangeSelectedBeer.bind(this);
+    this.handleChangBeerRemainings = this.handleChangBeerRemainings.bind(this);
   }
 
   handleAddingNewBeerToList(newBeer) {
@@ -25,6 +27,10 @@ class App extends React.Component {
   handleChangeSelectedBeer(beer) {
     this.setState({selectedBeer: beer});
     alert('The selected drink is now: ' + this.state.selectedBeer.name);
+  }
+
+  handleChangBeerRemainings(remaining) {
+    this.setState({beerRamining: (parseInt(remainig) - 1).toString()});
   }
 
   render() {
@@ -41,7 +47,8 @@ class App extends React.Component {
         <Header/>
         <Switch>
           <Route exact path='/' render={() => <BeerList beerList={this.state.masterBeerList}
-          onBeerSelection={this.handleChangeSelectedBeer}/>} />
+          onBeerSelection={this.handleChangeSelectedBeer}
+          onSellingPint={this.handleChangBeerRemainings}/>} />
           <Route path='/newbeer' render={() => <NewBeerForm onNewBeerCreation={this.handleAddingNewBeerToList} />} />
           <Route component={Error404} />
         </Switch>
