@@ -1,5 +1,6 @@
 import React from 'react';
 import { v4 } from 'uuid';
+import PropTypes from 'prop-types';
 
 function NewBeerForm(props) {
   var imgStyle = {

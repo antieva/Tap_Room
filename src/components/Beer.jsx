@@ -1,9 +1,9 @@
 import React from 'react';
-import PropTypes from "prop-types";
+import PropTypes from 'prop-types';
 
 function Beer(props){
   return (
-    <div className="color-toggle">
+    <div className='color-toggle'>
       <style jsx global>{`
         .color-toggle {
           background-color: inherit;
@@ -23,7 +23,6 @@ function Beer(props){
         <p>Price: ${props.price}</p>
         <p>Remainig: {props.remaining}</p>
       </div>
-      <p><em>{props.issue}</em></p>
       <hr/>
     </div>
   );

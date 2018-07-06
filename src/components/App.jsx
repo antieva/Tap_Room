@@ -5,25 +5,42 @@ import { Switch, Route } from 'react-router-dom';
 import NewBeerForm from './NewBeerForm';
 import Error404 from './Error404';
 
-function App(){
-  return (
-    <div>
-      <style jsx global>{`
-          div {
-            margin: 0 30px 30px;
+class App extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      masterBeerList: []
+    };
+    this.handleAddingNewBeerToList = this.handleAddingNewBeerToList.bind(this);
+  }
+
+  handleAddingNewBeerToList(newBeer) {
+    var newMasterBeerList = this.state.masterBeerList.slice();
+    newMasterBeerList.push(newBeer);
+    this.setState({masterBeerList: newMasterBeerList});
+  }
+
+  render() {
+    return (
+      <div>
+        <style jsx global>{`
+            div {
+              margin: 0 30px 30px;
+            }
+            body {
+            font-family: Helvetica;
           }
-          body {
-          font-family: Helvetica;
-        }
-        `}</style>
-      <Header/>
+          `}</style>
+        <Header/>
         <Switch>
           <Route exact path='/' component={BeerList} />
-          <Route path='/newbeer' component={NewBeerForm} />
+          <Route path='/newbeer' render={() => <NewBeerForm onNewBeerCreation={this.handleAddingNewBeerToList} />} />
           <Route component={Error404} />
         </Switch>
-    </div>
-  );
+      </div>
+    )
+  }
 }
+
 
 export default App;
