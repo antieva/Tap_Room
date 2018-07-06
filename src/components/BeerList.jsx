@@ -15,7 +15,8 @@ function BeerList(props) {
           abv={beer.abv}
           price={beer.price}
           remaining={beer.remaining}
-          key={beer.id} />
+          key={beer.id}
+          onTicketSelection={props.onTicketSelection}/>
         )}
     </div>
   );
@@ -23,7 +24,8 @@ function BeerList(props) {
 
 BeerList.propTypes = {
   beerList: PropTypes.array
-  onBeerSelection: PropTypes.func.isRequired
+  onBeerSelection: PropTypes.func.isRequired,
+  selectedBeer: PropTypes.object
 };
 
 export default BeerList;

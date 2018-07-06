@@ -34,7 +34,8 @@ Beer.propTypes = {
   description: PropTypes.string,
   abv: PropTypes.string.isRequired,
   price: PropTypes.string.isRequired,
-  remaining: PropTypes.string
+  remaining: PropTypes.string,
+  onBeerSelection: PropTypes.func
 };
 
 export default Beer;
