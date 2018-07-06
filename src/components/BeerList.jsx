@@ -3,6 +3,10 @@ import Beer from './Beer';
 import PropTypes from 'prop-types';
 
 function BeerList(props) {
+  let optionalSelectedBeer = null;
+  if (props.selectedBeer != null) {
+    
+  }
   console.log(props.beertList);
   return (
     <div>
@@ -16,7 +20,7 @@ function BeerList(props) {
           price={beer.price}
           remaining={beer.remaining}
           key={beer.id}
-          onTicketSelection={props.onTicketSelection}/>
+          onBeerSelection={props.onBeertSelection}/>
         )}
     </div>
   );
