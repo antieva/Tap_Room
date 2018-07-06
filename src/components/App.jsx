@@ -34,9 +34,16 @@ class App extends React.Component {
     var newMasterBeerList = this.state.masterBeerList.slice();
     newMasterBeerList.map((beer) => {
       if(beer.id == selectedBeer.id) {
-        beer.remaining = (parseInt(beer.remainig) - 1).toString();
+        console.log(beer.name);
+        console.log(beer.id);
+        console.log(selectedBeer.name);
+        console.log(selectedBeer.id);
+        console.log(beer.remainig);
+        beer.remaining = selectedBeer.remaining;
+        console.log('result ' + beer.remaining);
       }
     });
+    this.setState({masterBeerList: newMasterBeerList});
   }
 
   render() {

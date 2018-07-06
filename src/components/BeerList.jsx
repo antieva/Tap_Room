@@ -29,7 +29,7 @@ function BeerList(props) {
 BeerList.propTypes = {
   beerList: PropTypes.array,
   onBeerSelection: PropTypes.func.isRequired,
-  selectedBeer: PropTypes.object,
+  //selectedBeer: PropTypes.object,
   onSellingPint: PropTypes.func.isRequired
 };
 
