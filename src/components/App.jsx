@@ -35,12 +35,13 @@ class App extends React.Component {
         //console.log(beer.id);
         console.log(this.state.selectedBeer.name);
         //console.log(this.state.selectedBeer.id);
-        console.log(beer.remainig);
-        beer.remaining = 'Yo!';
+        console.log(beer.remaining);
+        beer.remaining = (parseInt(beer.remaining) - 1).toString();
         console.log('result ' + beer.remaining);
       }
     });
     this.setState({masterBeerList: newMasterBeerList});
+    this.setState({selectedBeer: null});
   }
 
   // handleChangBeerRemainings(beer) {

@@ -5,7 +5,6 @@ function Beer(props){
 
   function handleChangRemainings(event) {
     event.preventDefault();
-    console.log(props.remaining);
     props.onBeerSelection({name: props.name, brewer: props.brewer, description: props.description, abv: props.abv, price: props.price, remaining: props.remainig});
     console.log(props.remaining);
   }
