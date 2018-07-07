@@ -15,7 +15,7 @@ class App extends React.Component {
     };
     this.handleAddingNewBeerToList = this.handleAddingNewBeerToList.bind(this);
     this.handleChangeSelectedBeer = this.handleChangeSelectedBeer.bind(this);
-    this.handleChangBeerRemainings = this.handleChangBeerRemainings.bind(this);
+    //this.handleChangBeerRemainings = this.handleChangBeerRemainings.bind(this);
   }
 
   handleAddingNewBeerToList(newBeer) {
@@ -25,26 +25,40 @@ class App extends React.Component {
   }
 
   handleChangeSelectedBeer(beer) {
-    this.setState({selectedBeer: beer});
-    alert('The selected drink is now: ' + this.state.selectedBeer.name);
-  }
-
-  handleChangBeerRemainings(beer) {
-    this.setState({selectedBeer: beer});
     var newMasterBeerList = this.state.masterBeerList.slice();
+    this.setState({selectedBeer: beer});
+    console.log('Selected beer name: ' + this.state.selectedBeer.name);
+    //console.log('Selected beer id: ' + this.state.selectedBeer.id);
     newMasterBeerList.map((beer) => {
-      if(beer.id == selectedBeer.id) {
+      if(beer.name == this.state.selectedBeer.name) {
         console.log(beer.name);
-        console.log(beer.id);
-        console.log(selectedBeer.name);
-        console.log(selectedBeer.id);
+        //console.log(beer.id);
+        console.log(this.state.selectedBeer.name);
+        //console.log(this.state.selectedBeer.id);
         console.log(beer.remainig);
-        beer.remaining = selectedBeer.remaining;
+        beer.remaining = 'Yo!';
         console.log('result ' + beer.remaining);
       }
     });
     this.setState({masterBeerList: newMasterBeerList});
   }
+
+  // handleChangBeerRemainings(beer) {
+  //   this.setState({selectedBeer: beer});
+  //   var newMasterBeerList = this.state.masterBeerList.slice();
+  //   newMasterBeerList.map((beer) => {
+  //     if(beer.id == selectedBeer.id) {
+  //       console.log(beer.name);
+  //       console.log(beer.id);
+  //       console.log(selectedBeer.name);
+  //       console.log(selectedBeer.id);
+  //       console.log(beer.remainig);
+  //       beer.remaining = selectedBeer.remaining;
+  //       console.log('result ' + beer.remaining);
+  //     }
+  //   });
+  //   this.setState({masterBeerList: newMasterBeerList});
+  // }
 
   render() {
     return (
@@ -60,8 +74,7 @@ class App extends React.Component {
         <Header/>
         <Switch>
           <Route exact path='/' render={() => <BeerList beerList={this.state.masterBeerList}
-          onBeerSelection={this.handleChangeSelectedBeer}
-          onSellingPint={this.handleChangBeerRemainings}/>} />
+          onBeerSelection={this.handleChangeSelectedBeer}/>} />
           <Route path='/newbeer' render={() => <NewBeerForm onNewBeerCreation={this.handleAddingNewBeerToList} />} />
           <Route component={Error404} />
         </Switch>

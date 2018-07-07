@@ -3,10 +3,10 @@ import Beer from './Beer';
 import PropTypes from 'prop-types';
 
 function BeerList(props) {
-  let optionalSelectedBeer = null;
-  if (props.selectedBeer != null) {
-
-  }
+  // let optionalSelectedBeer = null;
+  // if (props.selectedBeer != null) {
+  //
+  // }
   return (
     <div>
       {props.beerList.map((beer) =>
@@ -19,8 +19,7 @@ function BeerList(props) {
           price={beer.price}
           remaining={beer.remaining}
           key={beer.id}
-          onBeerSelection={props.onBeerSelection}
-          onSellingPint={props.onSellingPint}/>
+          onBeerSelection={props.onBeerSelection} />
         )}
     </div>
   );
@@ -29,8 +28,8 @@ function BeerList(props) {
 BeerList.propTypes = {
   beerList: PropTypes.array,
   onBeerSelection: PropTypes.func.isRequired,
-  //selectedBeer: PropTypes.object,
-  onSellingPint: PropTypes.func.isRequired
+  //selectedBeer: PropTypes.object
+  //onSellingPint: PropTypes.func.isRequired
 };
 
 export default BeerList;

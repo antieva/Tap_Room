@@ -5,9 +5,9 @@ function Beer(props){
 
   function handleChangRemainings(event) {
     event.preventDefault();
-    alert(props.remainig);
-    props.onSellingPint({remaining: 'Hola!'});
-    alert({remainig});
+    console.log(props.remaining);
+    props.onBeerSelection({name: props.name, brewer: props.brewer, description: props.description, abv: props.abv, price: props.price, remaining: props.remainig});
+    console.log(props.remaining);
   }
   return (
     <div className='color-toggle'>
@@ -23,7 +23,7 @@ function Beer(props){
         }
       `}</style>
       <h3>{props.name}</h3>
-      <div onClick={() => {props.onBeerSelection({name: props.name, brewer: props.brewer, description: props.description, abv: props.abv, price: props.price, remaining: props.remainig});}}>
+      <div>
         <p>Brewer: {props.brewer}</p>
         <p>Description: {props.description}</p>
         <p>Abv: {props.abv}</p>
@@ -42,8 +42,8 @@ Beer.propTypes = {
   abv: PropTypes.string.isRequired,
   price: PropTypes.string.isRequired,
   remaining: PropTypes.string,
-  onBeerSelection: PropTypes.func,
-  onSellingPint: PropTypes.func.isRequired
+  onBeerSelection: PropTypes.func
+  //onSellingPint: PropTypes.func.isRequired
 };
 
 export default Beer;
