@@ -1,22 +1,18 @@
 import React from 'react';
-import { v4 } from 'uuid';
 import PropTypes from 'prop-types';
 
 function NewBeerForm(props) {
-  var imgStyle = {
-    width: '830px',
-  }
   var inputStyle =  {
-  outline: 'none',
-  border: 'none',
-  borderRadius: '4px',
-  padding: '10px',
-  fontSize: '20px',
-  width: '300px',
-  backgroundColor: '#dddddd',
-  margin: '10px 30% 10px 37%',
-  textAlign: 'center',
-  }
+    outline: 'none',
+    border: 'none',
+    borderRadius: '4px',
+    padding: '10px',
+    fontSize: '20px',
+    width: '300px',
+    backgroundColor: '#dddddd',
+    margin: '10px 30% 10px 37%',
+    textAlign: 'center',
+  };
   var button = {
     outline: 'none',
     border: 'none',
@@ -27,7 +23,7 @@ function NewBeerForm(props) {
     backgroundColor: '#dddddd',
     height: '45px',
     margin: '30px 30% 0 37%'
-  }
+  };
 
   let _name = null;
   let _brewer = null;
@@ -38,7 +34,7 @@ function NewBeerForm(props) {
 
   function handleNewBeerFormSubmission(event) {
     event.preventDefault();
-    props.onNewBeerCreation({name: _name.value, brewer: _brewer.value, description: _description.value, abv: _abv.value, price: _price.value, remaining: _remaining.value, id: v4()});
+    props.onNewBeerCreation({name: _name.value, brewer: _brewer.value, description: _description.value, abv: _abv.value, price: _price.value, remaining: _remaining.value});
     _name.value = ' ';
     _brewer.value = ' ';
     _description.value = ' ';

@@ -2,12 +2,10 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 function Beer(props){
-
   function handleChangRemainings(event) {
-    event.preventDefault();
-    props.onBeerSelection({name: props.name, brewer: props.brewer, description: props.description, abv: props.abv, price: props.price, remaining: props.remainig});
-    console.log(props.remaining);
-  }
+   event.preventDefault();
+   props.onBeerSelection(props.beerId);
+ }
   return (
     <div className='color-toggle'>
       <style jsx global>{`
@@ -27,7 +25,7 @@ function Beer(props){
         <p>Description: {props.description}</p>
         <p>Abv: {props.abv}</p>
         <p>Price: ${props.price}</p>
-        <p>Remainig: {props.remaining} <button type='button' onClick={handleChangRemainings}></button></p>
+        <p>Remainig: {props.remaining} <button type='button' onClick={handleChangRemainings}>Sell pint</button></p>
       </div>
       <hr/>
     </div>
@@ -41,7 +39,8 @@ Beer.propTypes = {
   abv: PropTypes.string.isRequired,
   price: PropTypes.string.isRequired,
   remaining: PropTypes.string,
-  onBeerSelection: PropTypes.func
+  onBeerSelection: PropTypes.func,
+  beerId:  PropTypes.string.isRequired
   //onSellingPint: PropTypes.func.isRequired
 };
 

@@ -9,26 +9,26 @@ function BeerList(props) {
   // }
   return (
     <div>
-      {props.beerList.map((beer) =>
-
-        <Beer
+      {Object.keys(props.beerList).map(function(beerId) {
+        var beer = props.beerList[beerId];
+        return <Beer
           name={beer.name}
           brewer={beer.brewer}
           description={beer.description}
           abv={beer.abv}
           price={beer.price}
           remaining={beer.remaining}
-          key={beer.id}
-          onBeerSelection={props.onBeerSelection} />
-        )}
+          key={beerId}
+          beerId ={beerId}
+          onBeerSelection={props.onBeerSelection} />;
+      })}
     </div>
   );
 }
 
 BeerList.propTypes = {
-  beerList: PropTypes.array,
-  onBeerSelection: PropTypes.func.isRequired,
-  //selectedBeer: PropTypes.object
+  beerList: PropTypes.object,
+  onBeerSelection: PropTypes.func.isRequired
   //onSellingPint: PropTypes.func.isRequired
 };
 
