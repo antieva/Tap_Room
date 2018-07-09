@@ -2,10 +2,6 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 function Beer(props){
-  function handleChangRemainings(event) {
-   event.preventDefault();
-   props.onBeerSelection(props.beerId);
- }
   return (
     <div className='color-toggle'>
       <style jsx global>{`
@@ -25,7 +21,7 @@ function Beer(props){
         <p>Description: {props.description}</p>
         <p>Abv: {props.abv}</p>
         <p>Price: ${props.price}</p>
-        <p>Remainig: {props.remaining} <button type='button' onClick={handleChangRemainings}>Sell pint</button></p>
+        <p>Remainig: {props.remaining} <button type='button' onClick={() => {props.onBeerSelection(props.beerId);}}>Sell a pint</button></p>
       </div>
       <hr/>
     </div>
