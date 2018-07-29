@@ -31,7 +31,7 @@ There is React app's component structure in the project file TapRoomComponentStr
 
 ## Installation
 
-When repository has been downloaded, change directory to root folder and _run npm install_ to install necessary packages to run accurately. If files are changed or updated, run _webpack_ in the command line.
+When repository has been downloaded, change directory to root folder and run _npm install_ to install necessary packages to run accurately. If files are changed or updated, run _webpack_ in the command line.
 
 Run _webpack-dev-server_ or _npm run start_ and navigate to: http://localhost:8080 into your address bar to host and view a live server, which auto-updates with Hot Module Replacement (HMR)
 
